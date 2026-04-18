@@ -1,65 +1,120 @@
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-gray-100">
+
+      {/* 🔹 HEADER */}
+      <div className="fixed top-0 left-0 w-full bg-white shadow z-50 h-16 flex items-center justify-between px-6">
+
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <Image 
+            src="/logo.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <h1 className="font-bold text-lg">Shivam Sticker</h1>
+        </div>
+
+        {/* Buttons */}
+        <div className="flex gap-3">
+          <button className="px-3 py-1 text-sm border border-black rounded hover:bg-black hover:text-white transition">
+            Contact Us
+          </button>
+          <button className="px-3 py-1 text-sm border border-black rounded hover:bg-black hover:text-white transition">
+            Log Out
+          </button>
+        </div>
+
+      </div>
+
+      {/* 🔹 BANNER */}
+      <div className="pt-20 flex justify-center px-4">
+        <div className="relative w-full max-w-5xl">
+
+          <Image 
+            src="/poster.png"
+            alt="poster"
+            width={1200}
+            height={400}
+            className="rounded-lg object-cover object-[center_top] w-full h-[230px] md:h-[280px]"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
+
+          {/* Text */}
+          <h1
+  className="
+    absolute top-1/2 left-[25%]
+    -translate-x-1/2 -translate-y-1/2
+    text-2xl md:text-4xl lg:text-5xl
+    font-semibold
+    text-white/90
+    drop-shadow-md
+    tracking-wide text-center
+  "
+>
+  Best Deal
+  <br></br>
+  <span>Affordable Price </span> 
+</h1>
+
+
+        </div>
+      </div>
+
+      {/* 🔹 SEARCH + LINKS */}
+      <div className="flex flex-col items-center mt-8">
+
+        <input
+          type="text"
+          placeholder="Search stickers..."
+          className="w-72 md:w-96 px-4 py-2 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+        <div className="flex gap-6 mt-4 text-sm md:text-base">
+          <Link href="/product-quality" className="hover:underline">
+            Product Quality
+          </Link>
+
+          <Link href="/place-order" className="hover:underline">
+            Place Order
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+      </div>
+
+      {/* 🔹 PRODUCTS */}
+      <div className="px-4 mt-10 mb-10">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+          {Array.from({ length: 24 }).map((_, i) => (
+            <div key={i} className="bg-white p-4 shadow rounded hover:shadow-lg transition">
+              <p className="text-center font-medium">Product {i + 1}</p>
+            </div>
+          ))}
+
         </div>
-      </main>
+
+      </div>
+
+      {/* 🔹 FOOTER */}
+      <div className="w-full bg-white text-black text-center p-4 text-xs border-t">
+        <p>Mohan Garden Uttam Nagar New Delhi 110059</p>
+        <p>Email: shivamsticker@gmail.com</p>
+        <p>Phone: +91 8084257809</p>
+        <button className="mt-2 px-3 py-1 border rounded hover:bg-black hover:text-white transition">
+          Instagram
+        </button>
+      </div>
+
     </div>
   );
 }
