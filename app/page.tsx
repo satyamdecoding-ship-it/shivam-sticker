@@ -1,7 +1,27 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
+const products = [
+  {
+    id: 1,
+    name: "discover O/M",
+    image: "/images/sticker1.jpg",
+    description: "Visor"
+  },
+  {
+    id: 2,
+    name: "CD dlx",
+    image: "/images/sticker2.jpg",
+    description: "panel"
+  },
+  {
+    id: 3,
+    name: "hero bike",
+    image: "/images/sticker3.jpg",
+    description: "Panel"
+  }
+];
 
 export default function Home() {
   
@@ -19,6 +39,7 @@ export default function Home() {
             width={40}
             height={40}
             className="rounded-full"
+            priority
           />
           <h1 className="font-bold text-lg">Shivam Sticker</h1>
         </div>
@@ -48,6 +69,7 @@ export default function Home() {
             width={1200}
             height={400}
             className="rounded-lg object-cover object-[center_top] w-full h-[230px] md:h-[280px]"
+            loading="eager"
           />
 
           {/* Overlay */}
@@ -98,18 +120,33 @@ export default function Home() {
 
       {/* 🔹 PRODUCTS */}
       <div className="px-4 mt-10 mb-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {products.map((product) => (
+      <div key={product.id} className="bg-white p-4 shadow rounded hover:shadow-lg transition">
+        
+        {/* Image */}
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-50 h-50 "
+        />
 
-          {Array.from({ length: 24 }).map((_, i) => (
-            <div key={i} className="bg-white p-4 shadow rounded hover:shadow-lg transition">
-              <p className="text-center font-medium">Product {i + 1}</p>
-            </div>
-          ))}
+        {/* Name */}
+        <h2 className="text-lg font-bold mt-2">
+          {product.name}
+        </h2>
 
-        </div>
+        {/* Description */}
+        <p className="text-gray-600 text-sm">
+          {product.description}
+        </p>
 
       </div>
+    ))}
+
+  </div>
+</div>
 
       {/* 🔹 FOOTER */}
       <div className="w-full bg-white text-black text-center p-4 text-xs border-t">
