@@ -25,7 +25,7 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <button onClick={()=>window.location.href = "tel:9354053861"}
+          <button onClick={()=>window.location.href = "tel:8084257809"}
           className="px-3 py-1 text-sm border border-black rounded hover:bg-black hover:text-white transition">
             Contact Us
           </button>
