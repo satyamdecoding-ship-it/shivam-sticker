@@ -1,8 +1,10 @@
-
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  
   return (
     <div className="min-h-screen bg-gray-100">
 
@@ -23,9 +25,12 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <button className="px-3 py-1 text-sm border border-black rounded hover:bg-black hover:text-white transition">
+          <button onClick={()=>window.location.href = "tel:9354053861"}
+          className="px-3 py-1 text-sm border border-black rounded hover:bg-black hover:text-white transition">
             Contact Us
           </button>
+        
+
           <button className="px-3 py-1 text-sm border border-black rounded hover:bg-black hover:text-white transition">
             Log Out
           </button>
@@ -77,6 +82,7 @@ export default function Home() {
           placeholder="Search stickers..."
           className="w-72 md:w-96 px-4 py-2 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
         />
+        <button>Search</button>
 
         <div className="flex gap-6 mt-4 text-sm md:text-base">
           <Link href="/product-quality" className="hover:underline">
