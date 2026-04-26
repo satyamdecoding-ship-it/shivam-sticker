@@ -20,6 +20,42 @@ const products = [
     name: "hero bike",
     image: "/images/sticker3.jpg",
     description: "Panel"
+  },
+  {
+    id: 4,
+    name: "passion pro",
+    image: "/images/sticker4.jpg",
+    description: "Panel"
+  },
+  {
+    id: 5,
+    name: "star sport N/M",
+    image: "/images/sticker5.jpg",
+    description: "visor"
+  },
+  {
+    id: 6,
+    name: "scotty 125cc",
+    image: "/images/sticker6.jpg",
+    description: "visor"
+  },
+  {
+    id: 7,
+    name: "pulsar N/M",
+    image: "/images/sticker7.jpg",
+    description: "visor"
+  },
+  {
+    id: 8,
+    name: "spl bs6",
+    image: "/images/sticker8.jpg",
+    description: "panel"
+  },
+  {
+    id: 9,
+    name: "shine",
+    image: "/images/sticker9.jpg",
+    description: "visor"
   }
 ];
 
@@ -99,12 +135,21 @@ export default function Home() {
       {/* 🔹 SEARCH + LINKS */}
       <div className="flex flex-col items-center mt-8">
 
-        <input
-          type="text"
-          placeholder="Search stickers..."
-          className="w-72 md:w-96 px-4 py-2 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
-        />
-        <button>Search</button>
+       
+         <div className="flex items-center gap-2">
+          <input
+           type="text"
+           placeholder="Search stickers..."
+           className="w-72 md:w-96 px-4 py-2 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+             />
+
+           <button className="px-4 py-2 bg-white text-black rounded-full border-gray-300  hover:bg-gray-300">
+            Search
+           </button>
+           </div>  
+       
+
+
 
         <div className="flex gap-6 mt-4 text-sm md:text-base">
           <Link href="/product-quality" className="hover:underline">
@@ -150,9 +195,9 @@ export default function Home() {
 
       {/* 🔹 FOOTER */}
       <div className="w-full bg-white text-black text-center p-4 text-xs border-t">
-        <p>Mohan Garden Uttam Nagar New Delhi 110059</p>
+        <p>1188/5,NAI WALA, KAROL BAGH, NEW DELHI-110005</p>
         <p>Email: shivamsticker@gmail.com</p>
-        <p>Phone: +91 8084257809</p>
+        <p>Phone: +91 9354053861</p>
         <button className="mt-2 px-3 py-1 border rounded hover:bg-black hover:text-white transition">
           Instagram
         </button>
