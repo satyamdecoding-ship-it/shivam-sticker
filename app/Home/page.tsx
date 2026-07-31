@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { Search } from "lucide-react";
-// import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const products = [
@@ -65,7 +65,8 @@ export default function Home() {
  
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products);
-    
+  const router = useRouter();
+ 
   
   const handleSearch = () => {
     const search = searchTerm.toLowerCase();
@@ -172,6 +173,7 @@ export default function Home() {
           src={product.image} 
           alt={product.name} 
           className="w-50 h-50 "
+          onClick={() => router.push(`/previewimage?id=${product.id}`)}
         />
 
         {/* Name */}
