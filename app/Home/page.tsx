@@ -129,7 +129,7 @@ export default function Home() {
             tracking-wide text-center
               "
            >
-             Best Deal
+             Best Quality
            <br></br>
           <span>Affordable Price </span> 
            </h1>
